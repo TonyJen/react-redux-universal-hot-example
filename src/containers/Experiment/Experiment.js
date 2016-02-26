@@ -1,30 +1,18 @@
-import React, {Component, PropTypes} from 'react';
+import React, {Component} from 'react';
 import Helmet from 'react-helmet';
 
 export default class Experiment extends Component {
 
-  static propTypes = {
-    liked: PropTypes.object
-  };
-
-  static defaultProps = {
-    liked: false
-  };
-
-  constructor(props) {
-    super(props);
-  }
-
-  state = {likes: this.props.liked};
-
-  handleClick() {
-    this.setState({likes: !this.state.likes });
-  }
+  state = {liked: true};
 
   render() {
-    const {user} = this.state.likes;
-    const text = user ? 'like' : 'haven\'t liked';
+    const text = this.state.liked ? 'like' : 'haven\'t liked';
     const names = ['Alice', 'Emily', 'Kate'];
+    const handleClick = () => {
+      this.setState({
+        liked: !this.state.liked
+      });
+    };
     return (
       <div className="container">
       <Helmet title="Experient Page"/>
@@ -34,7 +22,7 @@ export default class Experiment extends Component {
           return <div>Hello, {name}!</div>;
         })
       }
-      <p onClick={this.handleClick}>
+      <p onClick={handleClick}>
         You {text} this. Click to toggle.
       </p>
       </div>
