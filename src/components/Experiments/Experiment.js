@@ -1,10 +1,5 @@
 import React, {Component} from 'react';
 import Helmet from 'react-helmet';
-import {connect} from 'react-redux';
-
-
-@connect(state => ({liked: true}
-))
 
 export default class Experiment extends Component {
 

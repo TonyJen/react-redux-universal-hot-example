@@ -17,7 +17,6 @@ export default class Experiment extends Component {
   render() {
     const { liked, toggle} = this.props; // eslint-disable-line no-shadow
     const text = liked ? 'like' : 'haven\'t liked';
-    console.log('current liked state ' + liked);
     return (
       <div className="container">
       <Helmet title="Experient Page"/>
