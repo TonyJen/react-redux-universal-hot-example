@@ -1,8 +1,18 @@
-import React, {Component} from 'react';
+import React, {Component, PropTypes} from 'react';
 import Helmet from 'react-helmet';
+import {toggle} from 'redux/modules/experiment';
+import {connect} from 'react-redux';
+import {bindActionCreators} from 'redux';
 
+@connect(
+  (state) => ({liked: true}),
+  dispatch => bindActionCreators({toggle}, dispatch)
+)
 export default class Experiment extends Component {
-
+  static propTypes = {
+    liked: PropTypes.object,
+    toggle: PropTypes.func.isRequired
+  }
   state = {liked: true,
            list: this.createLongList()};
 
@@ -21,9 +31,7 @@ export default class Experiment extends Component {
     const text = this.state.liked ? 'like' : 'haven\'t liked';
 
     const handleClick = ()=> {
-      this.setState({
-        liked: !this.state.liked
-      });
+      toggle();
     };
     return (
       <div className="container">
