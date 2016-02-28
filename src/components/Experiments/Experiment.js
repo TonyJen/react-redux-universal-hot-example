@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import Helmet from 'react-helmet';
 
-export default class Experiment extends Component {
+export default class ExperimentComp extends Component {
 
 
   state = {liked: true,

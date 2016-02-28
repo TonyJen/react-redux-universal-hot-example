@@ -5,6 +5,7 @@ import {reducer as reduxAsyncConnect} from 'redux-async-connect';
 
 import auth from './auth';
 import experiment from './experiment';
+import longlist from './longlist';
 import counter from './counter';
 import {reducer as form} from 'redux-form';
 import info from './info';
@@ -14,8 +15,9 @@ export default combineReducers({
   routing: routeReducer,
   reduxAsyncConnect,
   auth,
-  form,
   experiment,
+  longlist,
+  form,
   multireducer: multireducer({
     counter1: counter,
     counter2: counter,

@@ -3,6 +3,7 @@ import Helmet from 'react-helmet';
 import {toggle} from 'redux/modules/experiment';
 import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
+import {ReduxLongList} from 'components';
 
 @connect(
   (state) => ({liked: state.experiment.liked}),
@@ -24,6 +25,7 @@ export default class Experiment extends Component {
       <p onClick={toggle}>
         You {text} this. Click to toggle.
       </p>
+      <ReduxLongList/>
       </div>
     );
   }

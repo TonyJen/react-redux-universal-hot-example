@@ -7,7 +7,6 @@ const initialState = {
 export default function reducer(state = initialState, action = {}) {
   switch (action.type) {
     case TOGGLE:
-      console.log('reducer liked state ' + state.liked);
       return {
         ...state,
         liked: !state.liked
