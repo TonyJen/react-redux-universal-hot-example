@@ -22,7 +22,7 @@ export default class ReduxLongList extends Component {
       <div className="container">
       <Helmet title="Experient Page"/>
       <h1>Experiment Page</h1>
-      <button onClick={() => {load(100000);}}>
+      <button onClick={() => {load(300);}}>
        Click to reload.
       </button>
       <p id="result"></p>
@@ -31,7 +31,7 @@ export default class ReduxLongList extends Component {
           return <div>Hello, {foo}!</div>;
         })
       }
-      <p>Total time rendered is {(now() - start) * 1000} milliseconds</p>
+      <p>Total time rendered is {now()} {start} {(now() - start)} milliseconds</p>
       </div>
     );
   }

@@ -8,7 +8,7 @@ const createLongList = (number)=> {
   const foo = [];
   let i = 0;
   for (i = 0; i <= number; i++) {
-    foo.push(i);
+    foo.push(Math.floor((Math.random() * 100) + 1));
   }
   return foo;
 };
